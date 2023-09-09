@@ -1,0 +1,51 @@
+To prepare the MySQL database and table for storing the data submitted through the job application form, you can use the following SQL statements. These statements create a database named "applicants" and a table named "applicants" with appropriate columns to store the applicant's information.
+
+Here are the MySQL statements:
+
+1. **Create the Database (if it doesn't already exist)**:
+
+   ```sql
+   CREATE DATABASE IF NOT EXISTS applicants;
+   ```
+
+   This statement creates the "applicants" database if it doesn't already exist.
+
+2. **Use the Database**:
+
+   ```sql
+   USE applicants;
+   ```
+
+   This statement selects the "applicants" database for further operations.
+
+3. **Create the "applicants" Table**:
+
+   ```sql
+   CREATE TABLE IF NOT EXISTS applicants (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       first_name VARCHAR(255) NOT NULL,
+       last_name VARCHAR(255) NOT NULL,
+       phone VARCHAR(20) NOT NULL,
+       email VARCHAR(255) NOT NULL,
+       address TEXT NOT NULL,
+       former_employer VARCHAR(255) NOT NULL,
+       position VARCHAR(255) NOT NULL,
+       submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+   ```
+
+   This statement creates the "applicants" table with the following columns:
+   
+   - `id`: A unique identifier for each application (auto-incremented).
+   - `first_name`: Applicant's first name.
+   - `last_name`: Applicant's last name.
+   - `phone`: Applicant's phone number.
+   - `email`: Applicant's email address.
+   - `address`: Applicant's address (stored as text).
+   - `former_employer`: Name of the former employer.
+   - `position`: Position at the former employer.
+   - `submission_date`: Timestamp to record the submission date (automatically set to the current timestamp when a new record is added).
+
+With these SQL statements, you can create the necessary database and table structure to store the submitted job applications. Please ensure that you have the necessary privileges to create databases and tables in your MySQL server.
+
+You can execute these SQL statements using a MySQL client tool or a script to set up your database.
